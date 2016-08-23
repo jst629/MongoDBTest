@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.mongodb.DB;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoDatabase;
+
 /**
  * Servlet implementation class MongoDB
  */
@@ -37,5 +41,11 @@ public class MongoDB extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	
+	protected void establishDatabase(){
+		MongoClient dbClient = new MongoClient( "localhost" , 27017);
+		MongoDatabase db = dbClient.getDatabase("test");
+	}
+	
 
 }
