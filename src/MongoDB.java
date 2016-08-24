@@ -13,6 +13,7 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 
 import org.bson.Document;
 
@@ -92,8 +93,7 @@ public class MongoDB extends HttpServlet {
 	}
 	
 	protected void queryData(MongoCollection<Document> table){
-		Document queryDoc = new Document("grades.score", new Document("$gt", 30));
-		
+		Document queryDoc = new Document("grades.score", new Document("$gt", 5));
 		FindIterable<Document> iterable = table.find(queryDoc);
 		
 	    if (iterable == null) {
