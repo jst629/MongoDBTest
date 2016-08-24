@@ -92,7 +92,9 @@ public class MongoDB extends HttpServlet {
 	}
 	
 	protected void queryData(MongoCollection<Document> table){
-		FindIterable<Document> iterable = table.find();
+		Document queryDoc = new Document("grades.score", new Document("$gt", 30));
+		
+		FindIterable<Document> iterable = table.find(queryDoc);
 		
 	    if (iterable == null) {
 	        return;
