@@ -44,7 +44,11 @@ public class MongoDB extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		MongoCollection<Document> table = establishDatabase();
+		//insertData(table);
+		String toShow = queryData(table);
+		response.getWriter().append("Served at: Songtao Jiang ").append(request.getContextPath()).append(toShow);
 	}
 
 	/**
@@ -54,14 +58,14 @@ public class MongoDB extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-	
-	protected void establishDatabase(){
+
+	protected MongoCollection<Document> establishDatabase(){
 		MongoClient dbClient = new MongoClient("localhost",27017);
 		MongoDatabase db = dbClient.getDatabase("test");
 		MongoCollection<Document> table = db.getCollection("restaurants");
-
+		return table;
 	}
-	
+
 	protected void insertData(MongoCollection<Document> table){
 		DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH);
 		try {
@@ -89,7 +93,6 @@ public class MongoDB extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 	
 	protected String queryData(MongoCollection<Document> table){
