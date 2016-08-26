@@ -46,7 +46,7 @@ public class MongoDB extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		MongoCollection<Document> table = establishDatabase();
-		//insertData(table);
+		insertData(table);
 		String toShow = queryData(table);
 		response.getWriter().append("Served at: Songtao Jiang ").append(request.getContextPath()).append(toShow);
 	}
