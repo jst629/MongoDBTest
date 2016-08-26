@@ -160,7 +160,6 @@
 	position: relative;
 	padding: 10px 40px;
   	margin: 0px 10px 10px 0px;
-  	float: left;
 	border-radius: 10px;
 	font-family: 'Pacifico', cursive;
 	font-size: 25px;
@@ -201,4 +200,172 @@
 	transform: translate(0px,5px);
   -webkit-transform: translate(0px,5px);
 	border-bottom: 1px solid;
+}
+
+@-webkit-keyframes Smash {
+	0% {
+		transform: translate3d(0px,0px,0px) rotateX( 0deg );
+	}
+	
+	38%{
+		transform: translate3d(0px,-14px,230px) rotateX( 20deg );
+	}
+
+	40% {
+		transform: translate3d(0px,-10px,240px) rotateX( -10deg );
+	}
+	
+	46%{
+		transform: translate3d(0px, 400px, 10px) rotateX( -28deg );
+	}
+	
+	58%{
+		transform: translate3d(0px, -10px, 50px) rotateX( -4deg );
+	}
+	
+	62%{
+		transform: translate3d(0px, -10px, 50px);
+	}
+	
+	78%{
+		transform: translate3d(0px, 0px, 0px);
+	}
+	
+	100% {
+		transform: translate3d(0px,0,0);
+	}
+}
+
+.Smash {
+	animation-name: Smash;
+	animation-duration: 3s;
+	animation-fill-mode: both;
+}
+
+#fighterImg{
+	perspective:700;
+	perspective-origin: 50% 50%;
+	height: 100px;
+	width:100px;
+	padding:20px;
+	margin:0 auto;
+}
+
+#box{
+	height: 148px;
+	width:100px;
+	background:url('http://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/5/5c/Garrosh_Hellscream-f.png/250px-Garrosh_Hellscream-f.png?version=a3871db3340c521300d7e3deb968b1ba') no-repeat top center;
+	background-size:cover;
+	transform-style: preserve-3d;
+	transition:all .6s ease;
+}
+
+.hs-wrapper {
+    cursor: pointer;
+    width: 200px;
+    padding: 0 2px;
+    border-right: none;
+    border-left: none;
+    box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+}
+
+.hs-button {
+    display: block;
+    text-align: center;
+    border-radius: 2px;
+    border: solid 3px #795548;
+}
+
+.hs-text {
+    display: table-cell; width: 100%;
+    vertical-align: middle;
+    padding: 9px 24px;
+    padding: 0.6rem 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 0 4px #000, 0 0 8px #000;
+    font-size: 20px;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+}
+
+.hs-border{
+    display: table;
+    border-radius: 2px;
+    height: 35px;
+    min-height: 35px;
+    width: 100%;
+    /* Font style */
+    text-transform: uppercase;
+    font-family: 'Fondamento', cursive;
+    font-weight: normal;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 1px 1px #000;
+    font-size: 17px;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.hs-wrapper.classic {
+    background-color: #c1b3b0;
+    background: linear-gradient(to bottom,
+        #c1b3b0,
+        #c1b3b0 9%,
+        #4a3424 93%,
+        #1c140d);
+    border-top: 2px solid #AD9A90;
+    border-bottom: 2px solid #1c140d;
+}
+
+.hs-wrapper.gold {
+    background-color: #d8be52;
+    background: linear-gradient(to bottom,
+        #d8be52,
+        #a77d33 9%,
+        #5f3f1d 93%,
+        #1c140d);
+    border-top: 2px solid #d8be52;
+    border-bottom: 2px solid #1c140d;
+}
+
+.hs-button.gold {
+    background: linear-gradient(to bottom,
+        #6f5742,
+        #81615d);
+}
+
+.hs-text.gold {
+    background: radial-gradient(circle,
+        #edca37 25%,
+        #a77d33 75%,
+        #5f3f1d);
+    text-decoration: none;
+}
+
+.hs-border.gold {
+    background-color: #a77d33;
+    box-shadow: 0px 2px 6px 0px #362c26;
+    background: linear-gradient(to bottom,
+        #d8be52,
+        #d5b631 5%,
+        #5f3f1d 59%,
+        #362c26);
+}
+
+.hs-border:hover .hs-text.gold{
+    background: radial-gradient(circle,
+        #fed83b 22%,
+        #dba23e 83%,
+        #9d6224);
+}
+
+.unselectable{
+	   -webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
