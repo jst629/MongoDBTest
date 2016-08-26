@@ -254,8 +254,8 @@
 #box{
 	height: 148px;
 	width:100px;
-	background:url('http://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/5/5c/Garrosh_Hellscream-f.png/250px-Garrosh_Hellscream-f.png?version=a3871db3340c521300d7e3deb968b1ba') no-repeat top center;
-	background-size:cover;
+	background:url(。。/resouces/images/mage.jpg) no-repeat top center;
+	background-size: contain;
 	transform-style: preserve-3d;
 	transition:all .6s ease;
 }
